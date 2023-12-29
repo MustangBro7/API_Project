@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-
+import SearchBar from './searchbar';
+import Results from './results';
+import sample_data from './sample.json'
 function App() {
+  let [results , setResults] = useState([])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchBar />
+      <Results></Results>
+      {/* {
+        sample_data.map(val =>{return(
+          <div key={val.idDrink}>{val.strDrink}</div>)
+          })
+      } */}
+      
     </div>
   );
 }
